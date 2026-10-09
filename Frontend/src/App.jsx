@@ -59,7 +59,7 @@ function App() {
       <div className="container">
 
         <div className="cabecalho">
-          <h1>Consultas de RV e Diarias</h1>
+          <h1>Consultas de RV / Diarias</h1>
           <p>Digite sua matrícula para consultar suas informações.</p>
         </div>
 
