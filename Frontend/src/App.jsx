@@ -23,7 +23,7 @@ function App() {
     setLoading(true);
 
     try {
-      const response = await fetch("https://api-horizonte-application.onrender.com/read", {
+      const response = await fetch("https://horizonte-api-consulta-001-admin1234.onrender.com/read", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"

@@ -5,7 +5,7 @@ import db from "./db.js";
 const app = express();
 
 app.use(cors({
-    origin: 'https://management-app-azure-iota.vercel.app'
+    origin: 'https://finnaly-mannage-app.vercel.app'
 }));
 app.use(express.json());
 
