@@ -36,7 +36,7 @@ function App() {
       const data = await response.json();
 
       console.log(data.dados);
-
+      console.log('esse e o data.dados')
       if (!response.ok) {
         setMessage(data.message || "Erro ao consultar matrícula");
         setDados(null);
