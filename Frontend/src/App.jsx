@@ -2,6 +2,7 @@
 import { useState } from "react";
 import "./App.css";
 import minhaLogo from "./assets/minha_logo.png";
+import logoHorizonte from "./assets/images.jpg";
 function App() {
   const [matricula, setMatricula] = useState("");
   const [dados, setDados] = useState(null);
@@ -54,11 +55,14 @@ function App() {
   }
 
   return (
+
     <div className="pagina">
 
       <div className="container">
 
         <div className="cabecalho">
+          <div className="horizonte"> <img src={logoHorizonte}></img> </div>
+         
           <h1>Consultas de RV / Diarias</h1>
           <p>Digite sua matrícula para consultar suas informações.</p>
         </div>
@@ -133,7 +137,7 @@ function App() {
       />
 
       <div className="rodape-textos">
-        <span className="rodape-legenda">Desenvolvido por</span>
+        <span className="rodape-legenda">Desenvolvedor</span>
 
         <h3>
           Kalebz<span className="rodape-destaque">_Dev</span>
