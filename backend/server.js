@@ -72,7 +72,7 @@ app.put("/read", async (req, res) => {
         }
 
         // Retorna os dados encontrados.
-        return res.status(200).json(usuario);
+        return res.status(200).json({dados:usuario});
 
     } catch (error) {
         console.error("Erro ao consultar usuário:", error);
