@@ -39,7 +39,7 @@ function obterCollectionDoMes() {
 }
 
 // Rota para consultar um usuário pela matrícula.
-app.post("/read", async (req, res) => {
+app.put("/read", async (req, res) => {
     try {
         const { matricula } = req.body;
 
