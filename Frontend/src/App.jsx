@@ -19,7 +19,8 @@ function App() {
       setDados(null);
       return;
     }
-
+    
+    setDados(null)
     setMessage("");
     setLoading(true);
 
@@ -98,6 +99,7 @@ function App() {
             <table>
               <thead>
                 <tr>
+                  <td>p/ MÊS</td>
                   <th>Matrícula</th>
                   <th>Nome</th>
                   <th>Dias a Serem Reabastecidos</th>
@@ -111,6 +113,7 @@ function App() {
 
               <tbody>
                 <tr>
+                  <td>{dados.mes}</td>
                   <td>{dados.matricula}</td>
                   <td>{dados.nome}</td>    
                   <td>{dados.dias_a_serem_reabastecidos}</td>
