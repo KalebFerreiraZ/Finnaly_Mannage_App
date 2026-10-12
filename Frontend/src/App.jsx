@@ -8,7 +8,7 @@ function App() {
   const [dados, setDados] = useState(null);
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  
+  const [mes,setMes] = useState('')
   const MATRICULA_REGEX = /^[A-Za-z0-9_-]{3,20}$/;
 
   async function req() {
@@ -25,13 +25,17 @@ function App() {
     setLoading(true);
 
     try {
+      if(!mes){
+        setMessage('Selecione Um MÊS!')
+        return;
+      }
       const response = await fetch("https://horizonte-api-consulta-001-admin1234.onrender.com/read", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          matricula: m
+          matricula: m,mes:mes
         })
       });
 
@@ -67,7 +71,29 @@ function App() {
           <h1>Consultas de RV / Diarias</h1>
           <p>Digite sua matrícula para consultar suas informações.</p>
         </div>
+        <div className="seletor-mes">
+    <label htmlFor="mes">Selecione o mês:</label>
 
+    <select
+        id="mes"
+        value={mes}
+        onChange={(e) => setMes(e.target.value)}
+    >
+        <option value="">Selecione um mês</option>
+        <option value="janeiro">Janeiro</option>
+        <option value="fevereiro">Fevereiro</option>
+        <option value="março">Março</option>
+        <option value="abril">Abril</option>
+        <option value="maio">Maio</option>
+        <option value="junho">Junho</option>
+        <option value="julho">Julho</option>
+        <option value="agosto">Agosto</option>
+        <option value="setembro">Setembro</option>
+        <option value="outubro">Outubro</option>
+        <option value="novembro">Novembro</option>
+        <option value="dezembro">Dezembro</option>
+    </select>
+</div>
         <div className="consulta">
           <input
             placeholder="Insira sua matrícula"

@@ -10,38 +10,12 @@ app.use(cors({
 app.use(express.json());
 
 // Identifica a collection correspondente ao mês atual.
-function obterCollectionDoMes() {
-    const dataAtual = new Date();
-
-    const mes = new Intl.DateTimeFormat("pt-BR", {
-        month: "long",
-        timeZone: "America/Sao_Paulo"
-    }).format(dataAtual);
-
-    // O nome da collection de março não possui cedilha.
-    const collections = {
-        janeiro: "janeiro",
-        fevereiro: "fevereiro",
-        março: "marco",
-        abril: "abril",
-        maio: "maio",
-        junho: "junho",
-        julho: "julho",
-        agosto: "agosto",
-        setembro: "setembro",
-        outubro: "outubro",
-        novembro: "novembro",
-        dezembro: "dezembro",
-    
-    };
-
-    return collections[mes];
-}
 
 // Rota para consultar um usuário pela matrícula.
 app.put("/read", async (req, res) => {
     try {
-        const { matricula } = req.body;
+        const matricula = req.body.matricula
+        const mes = req.body.mes
 
         // Valida a matrícula recebida.
         if (
@@ -55,9 +29,7 @@ app.put("/read", async (req, res) => {
         }
 
         // Obtém a collection do mês atual.
-        const nomeCollection = obterCollectionDoMes();
-
-        const collection = db.collection(nomeCollection);
+        const collection = db.collection(mes)
 
         // Procura o usuário pela matrícula.
         const usuario = await collection.findOne({

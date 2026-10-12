@@ -432,3 +432,44 @@ body,
   margin-top: 0px;
   margin-bottom: 30px;
 }
+/* Seletor de mês */
+.seletor-mes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 350px;
+  margin: 20px auto;
+}
+
+.seletor-mes label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.seletor-mes select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333;
+  font-size: 15px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.seletor-mes select:hover {
+  border-color: #777;
+}
+
+.seletor-mes select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.seletor-mes select option {
+  padding: 10px;
+}
