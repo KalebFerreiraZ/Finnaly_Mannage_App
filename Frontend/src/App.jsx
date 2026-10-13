@@ -9,8 +9,8 @@ function App() {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [mes,setMes] = useState('')
-  const MATRICULA_REGEX = /^[A-Za-z0-9_-]{3,20}$/;
-
+  const MATRICULA_REGEX = /^[0-9]{3,20}$/;
+  
   async function req() {
     const m = matricula.trim();
 
